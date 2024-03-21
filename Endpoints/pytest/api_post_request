@@ -1,0 +1,65 @@
+
+# ----- Documentation -----
+# - Run this test using: pytest todo-app-test.py
+# - APIRequestContext -> https://playwright.dev/python/docs/api/class-apirequestcontext#api-request-context-post
+# - Python F Strings -> https://realpython.com/python-f-strings/https://realpython.com/python-f-strings/
+# - Pytest Fixtures -> https://playwright.dev/python/docs/test-runners#fixtures
+# - Python Function Annotations -> https://peps.python.org/pep-3107/
+# - Typing: https://docs.python.org/3/library/typing.html
+# -------------------------
+
+# This module provides runtime support for type hints.
+from typing import Generator
+# This module imports pytest
+import pytest
+# This module import instances and modules required by playwright
+from playwright.sync_api import Playwright, APIRequestContext, expect
+# Define fixtures for static data used by tests.
+# This data can be accessed by all tests in the suite unless specified otherwise.
+# This could be data as well as helpers of modules which will be passed to all tests.
+
+# Send this fixture as parameter in your tests. we can also use the conftest.py
+
+
+@pytest.fixture(scope="module")
+def myIds():
+    keys = []
+    yield keys
+
+# In testing, a fixture provides a defined, reliable and consistent context for the tests.
+# We may configure "FUNCTION" scope & "SESSION" scope.
+
+
+@pytest.fixture(scope="session")
+def test_api_request_context(
+    playwright: Playwright,
+    # class typing.Generator
+    # It means that you need to declare types of variables, parameters, and return values_
+    # of a function upfront. The predefined types allow the compilers to check the code before
+    # compiling and running the program.
+) -> Generator[APIRequestContext, None, None]:
+    request_context = playwright.request.new_context(
+        base_url="https://api.demoblaze.com"
+    )
+    yield request_context
+    # This method discards all stored responses
+    request_context.dispose()
+
+def test_post_login(api_request_context: APIRequestContext, myIds) -> None:
+    data = {
+        "username": "userautomation",
+        "password": "UDQkJHdvcmQ="
+    }
+    response = api_request_context.post(
+        f"/login", data=data
+    )
+    assert response.ok
+
+    login_response = response.json()
+    # In order to check the logs, add -s as part of the command.
+    print("")
+    print(f"New login request: {response}")
+    print(f"login_response Var: {login_response}")
+    # print(f"todo_response Var: {todos_response['id']}")
+
+    myIds.append(login_response['id'])
