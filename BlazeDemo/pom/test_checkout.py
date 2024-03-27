@@ -1,7 +1,7 @@
 import pytest
-from pageObjects.LoginPage import LoginPage
-from pageObjects.CartPage import CartPage
-from pageObjects.CheckoutPage import CheckoutPage
+from pages.LoginPage import LoginPage
+from pages.CartPage import CartPage
+from pages.CheckoutPage import CheckoutPage
 from playwright.sync_api import Page, expect
 from data.LoginData import LoginData
 from helper.CsvParser import CsvParser

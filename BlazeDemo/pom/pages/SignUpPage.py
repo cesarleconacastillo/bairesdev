@@ -1,3 +1,4 @@
+
 class SignupPage:
 
     def __init__(self, page):
@@ -20,4 +21,3 @@ class SignupPage:
 
     def close_modal(self):
         self.page.locator("#signInModal div:nth-child(3)  button:nth-child(2)").click()
-    
