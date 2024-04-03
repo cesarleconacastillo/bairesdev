@@ -29,9 +29,9 @@ def test_iterate_phones(test_data: LoginData, page: Page):
     for e in elements:
         print(e)
     
-@pytest.mark.parametrize('test_data', csv_data.filter_on_test_case_id('TC-1'))
+@pytest.mark.parametrize('test_data', csv_data.filNter_on_test_case_id('TC-1'))
 def test_pagination(test_data: LoginData, page: Page):
-    store = StorePage(page)
+    store = StorePage(page) 
     page.goto("/")
     expect(store.get_next_btn_text()).to_contain_text('Next')
     expect(store.get_prev_btn_text()).to_contain_text('Previous')

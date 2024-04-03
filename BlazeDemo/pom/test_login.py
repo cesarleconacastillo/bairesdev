@@ -7,7 +7,6 @@ from helper.Utils import path_from_project_root
 
 csv_data = CsvParser(path_from_project_root('resources/test_data/login.csv'), LoginData)
 
-
 @pytest.mark.parametrize('test_data', csv_data.filter_on_test_case_id('TC-1'))
 def test_login_success(test_data: LoginData, page: Page):
     login = LoginPage(page)
