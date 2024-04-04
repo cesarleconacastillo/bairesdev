@@ -1,0 +1,37 @@
+[
+    {
+    "title": "Samsung galaxy s6",
+    "price": "$360",
+    "description": "The Samsung Galaxy S6 is powered by 1.5GHz octa-core Samsung Exynos"    
+    },
+    {
+    "title": "Nokia lumia 1520",
+    "price": "$820",
+    "description": "The Nokia Lumia 1520 is powered by 2.2GHz quad-core Qualcomm"    
+    },
+    {
+    "title": "Nexus 6",
+    "price": "$650",
+    "description": "The Motorola Google Nexus 6 is powered by 2.7GHz quad-core"    
+    },
+    {
+    "title": "Samsung galaxy s7",
+    "price": "$800",
+    "description": "The Samsung Galaxy S7 is powered by 1.6GHz octa-core it comes with 4GB"    
+    },
+    {
+    "title": "Iphone 6 32gb",
+    "price": "$790",
+    "description": "It comes with 1GB of RAM. The phone packs 16GB of internal storage"    
+    },
+    {
+    "title": "Sony xperia z5",
+    "price": "$320",
+    "description": "Sony Xperia Z5 Dual smartphone was launched in September 2015"    
+    },
+    {
+    "title": "HTC One M9",
+    "price": "$700",
+    "description": "The HTC One M9 is powered by 1.5GHz octa-core Qualcomm"    
+    }
+]

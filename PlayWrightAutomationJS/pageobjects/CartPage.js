@@ -1,35 +1,30 @@
-const {test, expect} = require('@playwright/test');
-class CartPage
-{
-constructor(page)
-{
-    this.page = page;
-    this.cartProducts = page.locator("div li").first();
-    this.productsText = page.locator(".card-body b");
-    this.cart =  page.locator("[routerlink*='cart']");
-    this.orders = page.locator("button[routerlink*='myorders']");
-    this.checkout = page.locator("text=Checkout");
+
+class CartPage {
+
+    constructor(page)
+    {
+        this.page = page;
+        this.prodDetail = page.locator("//*[@id='tbodyid']/div[1]/div/div/h4/a");
+        this.addProduct = page.locator("//*[@id='tbodyid']/div[2]/div/a");
+        this.openCart = page.locator("#cartur");
+        this.productTitle = page.locator("//*[@id='tbodyid']/tr/td[2]");
+        this.productPrice = page.locator("//*[@id='tbodyid']/tr/td[3]");
+        this.deleteBtn = page.locator("//*[@id='tbodyid']/tr/td[4]/a");
+    }
+
+    async addProductBtn(){
+        await this.prodDetail.click();
+        await this.addProduct.click();
+    }
+
+    async openCartPage(){
+        await this.openCart.click();
+    }
+
+    async deleteProduct(){
+        await this.deleteBtn.click();
+    }
 
 }
 
-async VerifyProductIsDisplayed(productName)
-{
-   
-    await this.cartProducts.waitFor();
-    const bool =await this.getProductLocator(productName).isVisible();
-    expect(bool).toBeTruthy();
-
-}
-
-async Checkout()
-{
-    await this.checkout.click();
-}
-
- getProductLocator(productName)
-{
-    return  this.page.locator("h3:has-text('"+productName+"')");
-}
-
-}
-module.exports = {CartPage};
+module.exports = {CartPage}

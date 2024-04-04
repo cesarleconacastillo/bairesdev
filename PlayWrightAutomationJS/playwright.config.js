@@ -1,31 +1,29 @@
 // @ts-check
-const { devices } = require('@playwright/test');
+const { defineConfig, devices } = require('@playwright/test');
 
-const config = {
+/**
+ * Read environment variables from file.
+ * https://github.com/motdotla/dotenv
+ */
+// require('dotenv').config();
+
+/**
+ * @see https://playwright.dev/docs/test-configuration
+ */
+module.exports = defineConfig({
   testDir: './tests',
-  retries :0,
-  
-  /* Maximum time one test can run for. */
   timeout: 30 * 1000,
-  expect: {
-  
-    timeout: 5000
+  expect:{
+    timeout:5000
   },
-  
+  /* Run tests in files in parallel */
+  fullyParallel: false,
+  /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: 'html',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
-
-    browserName : 'chromium',
-    headless : false,
-    screenshot : 'on',
-    trace : 'on',//off,on
-    
-    
-    
+    browserName: 'chromium',
+    headless: false
   },
+});
 
-
-};
-
-module.exports = config;

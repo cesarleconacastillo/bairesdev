@@ -1,0 +1,7 @@
+{
+    "scenario26": "Add a product in the cart",
+    "title": "Samsung galaxy s6",
+    "detail": "The Samsung Galaxy S6 is powered by 1.5GHz octa-core Samsung Exynos",
+    "price": "360",
+    "scenario27": "Remove a product from the cart"
+}

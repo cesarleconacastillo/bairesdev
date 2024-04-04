@@ -1,0 +1,13 @@
+{
+    "scenario1": "Login Success",
+    "user": "userautomation",
+    "pwd": "P4$$word",
+    "scenario2": "Invalid username or password",
+    "invalidUser": "cesarleconatest",
+    "invalidPwd": "invalidPwd$testing",
+    "welcomeUser": "Welcome userautomation",
+    "scenario9": "Sign Up Success",
+    "newUser": "new_user_",
+    "newPwd": "newP4$$word",
+    "scenario10": "Existing username for sign up"
+}
