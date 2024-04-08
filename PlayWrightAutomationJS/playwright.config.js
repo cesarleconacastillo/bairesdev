@@ -1,11 +1,4 @@
-// @ts-check
-const { defineConfig, devices } = require('@playwright/test');
-
-/**
- * Read environment variables from file.
- * https://github.com/motdotla/dotenv
- */
-// require('dotenv').config();
+const { defineConfig } = require('@playwright/test');
 
 /**
  * @see https://playwright.dev/docs/test-configuration
@@ -20,8 +13,9 @@ module.exports = defineConfig({
   fullyParallel: false,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: 'html',
-  /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
+  /* Shared settings for all the projects below. */
   use: {
+    baseURL: 'https://www.demoblaze.com',
     browserName: 'chromium',
     headless: false
   },

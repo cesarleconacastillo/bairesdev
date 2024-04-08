@@ -11,10 +11,6 @@ class SigninPage {
         this.welcomeName = page.locator("#nameofuser");
     }
 
-    async goto() {
-        await this.page.goto("https://www.demoblaze.com/");
-    }
-
     async goSignin() {
         await this.openSigninModal.click();
     }
@@ -22,6 +18,9 @@ class SigninPage {
     async signin(user, pwd){
         await this.userName.fill(user);
         await this.password.fill(pwd);
+    }
+    
+    async submit(){
         await this.signInButton.click();
     }
 

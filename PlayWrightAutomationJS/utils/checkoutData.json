@@ -5,7 +5,5 @@
     "cardNumber": "4012888888881881",
     "month": "10",
     "year": "2025",
-    "confirmMsg": "Thank you for your purchase!",
-    "scenario29": "Place an order",
-    "scneario30": "Empty fields in checkout form"
+    "confirmMsg": "Thank you for your purchase!"
 }

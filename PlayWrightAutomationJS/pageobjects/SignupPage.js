@@ -17,6 +17,9 @@ class SignupPage {
     async signup(newUser, newPwd){
         await this.userName.fill(newUser);
         await this.password.fill(newPwd);
+    }
+    
+    async submit(){
         await this.signupButton.click();
     }
 

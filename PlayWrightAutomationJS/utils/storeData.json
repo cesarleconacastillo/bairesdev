@@ -1,8 +1,6 @@
 {
-    "scenario17": "Navigate through store categories",
     "category": "CATEGORIES",
     "phone": "Phones",
     "laptop": "Laptops",
-    "monitor": "Monitors",
-    "scenario18": "Review title, price and description for all products under a category"
+    "monitor": "Monitors"
 }

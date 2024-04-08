@@ -12,8 +12,11 @@ class CartPage {
         this.deleteBtn = page.locator("//*[@id='tbodyid']/tr/td[4]/a");
     }
 
-    async addProductBtn(){
+    async clickProductDetails(){
         await this.prodDetail.click();
+    }
+
+    async addProductBtn(){
         await this.addProduct.click();
     }
 
